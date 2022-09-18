@@ -1,38 +1,218 @@
-.App {
-  text-align: center;
+:root {
+  --pink: #EFADB9;
+  --pink-light: #EFCBD2;
+  --cover-dark: #A285A1;
+  --border: #EFEFEF;
+  --placeholder-text: #747474;
+  --dark-purple: #624d62;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  position: relative;
+  max-width: 900px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hidden {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form__container {
+  display: flex;
+  margin: auto;
+  width: 900px;
+  background-color: white;
+  box-shadow: -5px 10px 30px 5px rgba(232,232,232,0.9);
+}
+
+.form__wrap {
+  padding: 50px 50px 80px 50px;
+  width: 50%;
+  z-index: 1;
+  transition: transform 0.5s 0s ease-in-out, z-index 0.01s 0.25s ease-in-out;
+}
+
+.form__wrap:nth-child(1) {
+  z-index: 1;
+  transform: translate(0, 0);
+}
+  
+.form__wrap:nth-child(2) {
+  z-index: -1;
+  transform: translate(-100%, 0);
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+}
+
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  height: 40px;
+  line-height: 40px;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border: solid 1px var(--border);
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 0 25px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  width: auto;
+  color: white;
+  font-weight: 700;
+  width: auto;
+  margin-bottom: 5px;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+}
+
+.btn--light {
+  background-color: var(--pink); 
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn--dark {
+  background-color: var(--cover-dark); 
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form__title {
+  text-align: center;
+  margin: 0 0 30px;
+  font-size: 36px;
+}
+
+.toggle {
+  text-align: right;
+  text-decoration: underline;
+  transition: all 0.1s ease-in-out;
+  width: auto;
+  align-self: flex-end;
+}
+
+.toggle:hover,
+.toggle:focus {
+  color: var(--pink);
+  cursor: pointer;
+}
+
+.cover {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  height: calc(100% + 72px);
+  background-color: var(--pink-light);
+  width: 50%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transition: right 0.5s ease-in-out, background-color 0.2s ease-in-out 0.3s;
+  overflow: hidden;
+}
+
+.cover__title {
+  font-weight: 700;
+  font-size: 48px;
+  max-width: 80%;
+}
+
+.cover__content {
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.cover__content p {
+  max-width: 60%;
+  font-size: 24px;
+  margin: 25px 0 0 0;
+}
+
+.cover--signin {
+  transform: translate(50%, 0%);
+  opacity: 1;
+  color: var(--dark-purple);
+  transition: transform 0.8s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.4s;
+}
+
+.cover--signup {
+  transform: translate(225px, 0%);
+  opacity: 0;
+  color: var(--pink-light);
+  transition: transform 0.8s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.4s;
+}
+
+/* Using hidden checkbox as toggle for cover  */
+#to-cover:checked ~ .cover{
+  background-color: var(--cover-dark);
+  right: 50%;
+}
+
+/* checked == create account form is shown */
+#to-cover:checked ~ .cover .cover--signin {
+  transform: translate(-225px, 0);
+  opacity: 0;
+}
+
+#to-cover:checked ~ .cover .cover--signup {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+#to-cover:checked ~ .form__container .form__wrap:nth-child(1) {
+  transform: translate(100%, 0);
+  z-index: -1;
+}
+
+#to-cover:checked ~ .form__container .form__wrap:nth-child(2) {
+  transform: translate(0, 0);
+  z-index: 1;
+}
+
+
+.tickerMessage {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background-color: #E8D68E;
+  text-align: center;
+  padding: 5px 20px;
+}
+
+.tickerMessage p {
+  margin: 0;
 }
