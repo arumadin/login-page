@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/login-page-app/static/css/main.1a1c05ce.css",
-    "main.js": "/login-page-app/static/js/main.aa7d0ff1.js",
-    "static/js/787.9b6e8c70.chunk.js": "/login-page-app/static/js/787.9b6e8c70.chunk.js",
-    "index.html": "/login-page-app/index.html",
-    "main.1a1c05ce.css.map": "/login-page-app/static/css/main.1a1c05ce.css.map",
-    "main.aa7d0ff1.js.map": "/login-page-app/static/js/main.aa7d0ff1.js.map",
-    "787.9b6e8c70.chunk.js.map": "/login-page-app/static/js/787.9b6e8c70.chunk.js.map"
+    "main.css": "/login-page/static/css/main.1a1c05ce.css",
+    "main.js": "/login-page/static/js/main.ef2cfc9b.js",
+    "static/js/787.9b6e8c70.chunk.js": "/login-page/static/js/787.9b6e8c70.chunk.js",
+    "index.html": "/login-page/index.html",
+    "main.1a1c05ce.css.map": "/login-page/static/css/main.1a1c05ce.css.map",
+    "main.ef2cfc9b.js.map": "/login-page/static/js/main.ef2cfc9b.js.map",
+    "787.9b6e8c70.chunk.js.map": "/login-page/static/js/787.9b6e8c70.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1a1c05ce.css",
-    "static/js/main.aa7d0ff1.js"
+    "static/js/main.ef2cfc9b.js"
   ]
 }
